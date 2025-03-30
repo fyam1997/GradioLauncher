@@ -13,7 +13,8 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description>Added a simple action to launch python file with gradio. you must add gradio to env path first</description>
+    <description>Added a simple action to launch python file with gradio. you must add gradio to env path first
+    </description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -24,5 +25,10 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <runLineMarkerContributor
+                language="Python"
+                order="last"
+                implementationClass="top.fyam.gradiolauncher.GradioRunLineMarkerContributor"/>
+
     </extensions>
 </idea-plugin>
