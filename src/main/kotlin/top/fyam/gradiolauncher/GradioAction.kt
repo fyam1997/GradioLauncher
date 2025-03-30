@@ -30,12 +30,12 @@ class GradioAction : AnAction(
 
     private fun createConfigSetting(file: PsiFile): RunnerAndConfigurationSettings {
         val configurationSetting = RunManager.getInstance(file.project)
-            .createConfiguration(file.name, ShConfigurationType.getInstance())
+            .createConfiguration("gradio ${file.name}", ShConfigurationType.getInstance())
 
         val configuration = configurationSetting.configuration as ShRunConfiguration
         configuration.isExecuteInTerminal = true
         configuration.isExecuteScriptFile = false
-        configuration.scriptText = "gradio ${file.name}"
+        configuration.scriptText = "gradio ${file.virtualFile.path}"
         configuration.scriptWorkingDirectory = file.project.basePath
         return configurationSetting
     }
