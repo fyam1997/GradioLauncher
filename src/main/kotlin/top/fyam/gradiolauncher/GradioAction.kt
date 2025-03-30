@@ -28,6 +28,7 @@ class GradioAction : AnAction(
         ProgramRunnerUtil.executeConfiguration(configSetting, DefaultRunExecutor.getRunExecutorInstance())
     }
 
+    // TODO if gradio only available in venv, must ExecuteInTerminal. try to make use of venv, or make a configuration type instead of ShConfigurationType
     private fun createConfigSetting(file: PsiFile): RunnerAndConfigurationSettings {
         val configurationSetting = RunManager.getInstance(file.project)
             .createConfiguration("gradio ${file.name}", ShConfigurationType.getInstance())
