@@ -2,3 +2,10 @@
 build
 .gradle
 .intellijPlatform
+
+# certs
+/certificate/private_encrypted.pem
+/certificate/private.pem
+/certificate/chain.crt
+/certificate/passphrase.txt
+/certificate/publish_token.txt
